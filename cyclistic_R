@@ -1,0 +1,233 @@
+### start by installing the add-ons 
+install.packages('tidyverse')
+library(tidyverse)
+# tidyverse for data import and wrangling
+
+# lubridate for date functions
+install.packages("lubridate")
+library(lubridate)
+
+# ggplot for visualization
+install.packages('ggplot2')
+library(ggplot2)
+
+### for data manipulation
+install.packages("dplyr")
+library(dplyr)
+
+
+
+#getwd()displays your working directory
+getwd()
+
+# STEP 1 COLLECT DATA
+
+#upload divvy datasets (csv files)
+library(readr)
+
+x202201 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202202 <- read_delim("Nouveau dossier/202202-divvy-tripdata.csv", 
+                                     delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202203 <- read_delim("Nouveau dossier/202203-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202204 <- read_delim("Nouveau dossier/202204-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202205 <- read_delim("Nouveau dossier/202205-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202206 <- read_delim("Nouveau dossier/202206-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202207 <- read_delim("Nouveau dossier/202207-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202208 <- read_delim("Nouveau dossier/202208-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+
+x202209 <- read_delim("Nouveau dossier/202209-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202210 <- read_delim("Nouveau dossier/202210-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202211 <- read_delim("Nouveau dossier/202211-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+x202212 <- read_delim("Nouveau dossier/202212-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+
+# STEP 2: WRANGLE DATA AND COMBINE INTO A SINGLE FILE
+
+# Compare column names each of the files
+
+colnames(x202201)
+colnames(x202202)
+colnames(x202203)
+colnames(x202204)
+colnames(x202205)
+colnames(x202206)
+colnames(x202207)
+colnames(x202208)
+colnames(x202209)
+colnames(x202210)
+colnames(x202211)
+colnames(x202212)
+
+# after checking each dataset columns are consistent
+
+# Inspect the dataframes and look for incongruencies
+
+
+str(x202201)
+str(x202202)
+str(x202203)
+str(x202204)
+str(x202205)
+str(x202206)
+str(x202207)
+str(x202208)
+str(x202209)
+str(x202210)
+str(x202211)
+str(x202212)
+
+
+## selecting the important data 
+
+
+January = x202201 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+
+February = x202202 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+
+March = x202203 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+April = x202204 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+May = x202205 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+June = x202206 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+
+July = x202207 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+August = x202208 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+September = x202209 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+October = x202210 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+November = x202211 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+December = x202212 %>% 
+select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_lng, end_lat, member_casual, ride_length, day_of_week)
+
+
+
+### Stack data frames into one big data frame
+year_2022 <- bind_rows(January, February, March, April, May, June, July, August, September, October, November, December)
+
+
+## STEP 3: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
+
+### Inspect the new table that has been created
+
+colnames(year_2022)
+
+#List of column names
+
+nrow(year_2022)
+
+#How many rows are in data frame
+
+
+dim(year_2022)
+
+#Dimensions of the data frame
+
+head(year_2022)
+
+#See the first 6 rows of data frame
+
+tail(year_2022)
+
+#See list of columns and data types
+
+str(year_2022)
+
+summary(year_2022)
+
+# STEP 4: CONDUCT DESCRIPTIVE ANALYSIS
+
+# Descriptive analysis on ride_length
+
+mean(year_2022$ride_length)
+
+
+median(year_2022$ride_length)
+
+
+max(year_2022$ride_length)
+
+
+min(year_2022$ride_length)
+
+
+summary(year_2022$ride_length)
+
+# Compare members and casual users
+
+aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = mean) 
+
+aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = median) 
+
+aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = max)
+
+aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = min)
+
+# See the average ride time by each day for members vs casual users
+
+aggregate(year_2022$ride_length ~ year_2022$member_casual + year_2022$day_of_week, FUN = mean)
+
+
+# analyze ridership data by type and weekday
+
+         
+year_2022 <- year_2022 %>% 
+  mutate(day_of_week = recode(day_of_week, "1" = "Sunday",
+                              "2" = "Monday",
+                              "3" = "Tuesday",
+                              "4" = "Wednesday",
+                              "5" = "Thursday",
+                              "6" = "Friday",
+                              "7" = "Saturday"))
