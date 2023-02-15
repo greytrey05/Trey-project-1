@@ -1,82 +1,95 @@
-### start by installing the add-ons 
-install.packages('tidyverse')
-library(tidyverse)
-# tidyverse for data import and wrangling
 
-# lubridate for date functions
-install.packages("lubridate")
+                                     ### start by installing the add-ons 
+
+install.packages('tidyverse')
+library(tidyverse)                   ### tidyverse for data import and wrangling
+
+install.packages("lubridate")        ### lubridate for date functions
 library(lubridate)
 
-# ggplot for visualization
-install.packages('ggplot2')
+
+install.packages('ggplot2')          ### ggplot for visualization
 library(ggplot2)
 
-### for data manipulation
+                                     ### for data manipulation
 install.packages("dplyr")
 library(dplyr)
 
+getwd()                             ### displays your working directory
 
 
-#getwd()displays your working directory
-getwd()
 
-# STEP 1 COLLECT DATA
+# STEP 1 COLLECT DATA             
 
-#upload divvy datasets (csv files)
+## upload divvy datasets (csv files)
+
 library(readr)
 
+
 x202201 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202202 <- read_delim("Nouveau dossier/202202-divvy-tripdata.csv", 
-                                     delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202202 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202203 <- read_delim("Nouveau dossier/202203-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202203 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202204 <- read_delim("Nouveau dossier/202204-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202204 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202205 <- read_delim("Nouveau dossier/202205-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202205 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202206 <- read_delim("Nouveau dossier/202206-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202206 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202207 <- read_delim("Nouveau dossier/202207-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202207 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202208 <- read_delim("Nouveau dossier/202208-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202208 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
 
-x202209 <- read_delim("Nouveau dossier/202209-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202209 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                   delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                   trim_ws = TRUE)
 
 
-x202210 <- read_delim("Nouveau dossier/202210-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202210 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202211 <- read_delim("Nouveau dossier/202211-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202211 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
-x202212 <- read_delim("Nouveau dossier/202212-divvy-tripdata.csv", 
-                      delim = ";", escape_double = FALSE, trim_ws = TRUE)
+x202212 <- read_delim("Nouveau dossier/202201-divvy-tripdata.csv", 
+                      delim = ";", escape_double = FALSE, col_types = cols(ride_length = col_time(format = "%H:%M:%S")), 
+                      trim_ws = TRUE)
 
 
 # STEP 2: WRANGLE DATA AND COMBINE INTO A SINGLE FILE
 
-# Compare column names each of the files
+                                    ### Compare column names each of the files
 
 colnames(x202201)
 colnames(x202202)
@@ -91,9 +104,9 @@ colnames(x202210)
 colnames(x202211)
 colnames(x202212)
 
-# after checking each dataset columns are consistent
+                       ### after checking each data set columns are consistent
 
-# Inspect the dataframes and look for incongruencies
+                       ### Inspect the data frames and look for incongruencies
 
 
 str(x202201)
@@ -110,7 +123,7 @@ str(x202211)
 str(x202212)
 
 
-## selecting the important data 
+                                    ### Use Select() function to aggregate into one data type 
 
 
 January = x202201 %>% 
@@ -157,23 +170,32 @@ select(ride_id, rideable_type, started_at, ended_at, start_lat, end_lng, start_l
 ### Stack data frames into one big data frame
 year_2022 <- bind_rows(January, February, March, April, May, June, July, August, September, October, November, December)
 
+View(year_2022)
 
-## STEP 3: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
+### STEP 3: CLEAN UP AND ADD DATA TO PREPARE FOR ANALYSIS
+
+
+distinct(year_2022)
+glimpse(year_2022)
+class(year_2022$member_casual)
+unique(year_2022$rideable_type)
 
 ### Inspect the new table that has been created
 
 colnames(year_2022)
+names(year_2022)
+length(year_2022)
 
-#List of column names
+### List of column names
 
 nrow(year_2022)
 
-#How many rows are in data frame
+## How many rows are in data frame
 
 
 dim(year_2022)
 
-#Dimensions of the data frame
+## Dimensions of the data frame
 
 head(year_2022)
 
@@ -181,17 +203,18 @@ head(year_2022)
 
 tail(year_2022)
 
-#See list of columns and data types
+## See list of columns and data types
 
 str(year_2022)
 
 summary(year_2022)
 
-# STEP 4: CONDUCT DESCRIPTIVE ANALYSIS
 
-# Descriptive analysis on ride_length
+## STEP 4: CONDUCT DESCRIPTIVE ANALYSIS
 
-mean(year_2022$ride_length)
+                                       ### Descriptive analysis on ride_length
+
+mean(year_2022$ride_length) 
 
 
 median(year_2022$ride_length)
@@ -205,6 +228,15 @@ min(year_2022$ride_length)
 
 summary(year_2022$ride_length)
 
+
+is.factor(year_2022$ride_length)
+year_2022$ride_length <- as.numeric(as.character(year_2022$ride_length))
+is.numeric(year_2022$ride_length)
+
+is.timespan(year_2022$ride_length) 
+year_2022$ride_length <- as.numeric(as.character(year_2022$ride_length))  
+is.timespan(year_2022$ride_length)
+
 # Compare members and casual users
 
 aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = mean) 
@@ -215,12 +247,6 @@ aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = max)
 
 aggregate(year_2022$ride_length ~ year_2022$member_casual, FUN = min)
 
-# See the average ride time by each day for members vs casual users
-
-aggregate(year_2022$ride_length ~ year_2022$member_casual + year_2022$day_of_week, FUN = mean)
-
-
-# analyze ridership data by type and weekday
 
          
 year_2022 <- year_2022 %>% 
@@ -231,3 +257,49 @@ year_2022 <- year_2022 %>%
                               "5" = "Thursday",
                               "6" = "Friday",
                               "7" = "Saturday"))
+# See the average ride time by each day for members vs casual users
+
+aggregate(year_2022$ride_length ~ year_2022$member_casual + year_2022$day_of_week, FUN = mean)
+
+# analyze ridership data by type and weekday
+
+
+year_2022 %>% 
+group_by(member_casual, day_of_week) %>% #groups by usertype and weekday
+summarise(number_of_rides = n(), average_duration = mean(ride_length)) %>% # calculates the average duration & the number of rides
+arrange(member_casual, day_of_week)
+
+
+
+         
+# Let's visualize the number of rides by rider type
+
+
+year_2022 %>% 
+  group_by(member_casual, day_of_week) %>% 
+  summarise(number_of_rides = n()
+            ,average_duration = mean(ride_length)) %>% 
+  arrange(member_casual, day_of_week)  %>% 
+  ggplot(aes(x = day_of_week, y = number_of_rides, fill = member_casual)) +
+  geom_col(position = "dodge")
+
+# Let's create a visualization for average duration
+
+year_2022 %>% 
+  group_by(member_casual, day_of_week) %>% 
+  summarise(number_of_rides = n()
+            ,average_duration = mean(ride_length)) %>% 
+  arrange(member_casual, day_of_week)  %>% 
+  ggplot(aes(x = day_of_week, y = average_duration, fill = member_casual)) +
+  geom_col(position = "dodge")
+
+
+
+# STEP 5: EXPORT SUMMARY FILE FOR FURTHER ANALYSIS
+
+counts <- aggregate(year_2022$ride_length ~ year_2022$member_casual + year_2022$day_of_week, FUN = mean)
+
+View(counts)
+
+write.csv(counts, "~/R/cyclistic/counts.csv", row.names=TRUE)
+write.csv(year_2022, "~/R/cyclistic/year_2022.csv", row.names=TRUE)
