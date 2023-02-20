@@ -2,26 +2,24 @@
                                      ### start by installing the add-ons 
 
 install.packages('tidyverse')
-library(tidyverse)                   ### tidyverse for data import and wrangling
+library(tidyverse)                   ## tidyverse for data import and wrangling
 
-install.packages("lubridate")        ### lubridate for date functions
+install.packages("lubridate")        ## lubridate for date functions
 library(lubridate)
 
 
-install.packages('ggplot2')          ### ggplot for visualization
+install.packages('ggplot2')          ## ggplot for visualization
 library(ggplot2)
 
-                                     ### for data manipulation
+                                    ### for data manipulation
 install.packages("dplyr")
 library(dplyr)
 
-getwd()                             ### displays your working directory
+getwd()                            ## displays your working directory
 
 
 
-# STEP 1 COLLECT DATA             
-
-## upload divvy datasets (csv files)
+# STEP 1 COLLECT DATA             ## upload divvy datasets (csv files)
 
 library(readr)
 
@@ -123,7 +121,7 @@ str(x202211)
 str(x202212)
 
 
-                                    ### Use Select() function to aggregate into one data type 
+                                    ### Use Select() function to aggregate into one single data type 
 
 
 January = x202201 %>% 
@@ -186,7 +184,7 @@ colnames(year_2022)
 names(year_2022)
 length(year_2022)
 
-### List of column names
+## List of column names
 
 nrow(year_2022)
 
@@ -229,13 +227,6 @@ min(year_2022$ride_length)
 summary(year_2022$ride_length)
 
 
-is.factor(year_2022$ride_length)
-year_2022$ride_length <- as.numeric(as.character(year_2022$ride_length))
-is.numeric(year_2022$ride_length)
-
-is.timespan(year_2022$ride_length) 
-year_2022$ride_length <- as.numeric(as.character(year_2022$ride_length))  
-is.timespan(year_2022$ride_length)
 
 # Compare members and casual users
 
