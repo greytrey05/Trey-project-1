@@ -18,56 +18,33 @@ I will follow the steps of the data analysis process: **ask, prepare, process, a
 
 # Ask
 
-What is the problem you are trying to solve?
-How to convert casual riders to annual riders
+1. Identify the business task: 
+ 
+ * How do annual members and casual riders use Cyclistic bikes differently?
+ 
+2. Consider key stakeholders
 
-How can your insights drive business decisions?
-Compiling data will show some trends that might been discover or uncover to lead the marketing team toward a new target. 
-A clear statement of the business task
-The financial analyst has concluded that members were more profitable than casual ridders from their analysis, Moreno the director of the marketing team wants to know how to convert casual riders to annual member to do this I have to work with data to discover trends in order to answer the business question. 
-Prepare
-● Where is your data located?
-Dataset is located in a open-source storage from motivate International Inc under licence. 
-● How is the data organized?
-The dataset is a structured data organise in rows  and columns  
-The dataset is organized in 13 columns for the different 12 files, each columns contain the same organization. Ride_id, rideable_type, started_at, ended_at, start_station_name, start_station id, end_station_name, end_station_name, end_station_id, start_lat, start_lng,end_lng, member_casual
-● Are there issues with bias or credibility in this data? Does your data ROCCC?
- Reliability: the data is from motivate international an external company, it is not reliable
-Original the data is from motivate international for the use of a fictional company
-Comprehensive: data uses geographic localisation for different type of ride and when there used it.
-Current; data is from January 2022 to December 2022. Data is current as it had been updated monthly.
-Cited:  
-The credibility of this data can be questioned as there is not enough qualitative measurement. Is it not bias.
+* Lily Moreno: The director of marketing
 
-● How are you addressing licensing, privacy, security, and accessibility?
-It’s a public dataset from a licensed organization available on an open-source the privacy of the purchase and ID client had been hidden to maintain data security 
-● How did you verify the data’s integrity?
-When going through the data I am unable to view names or purchase from costumer as it has been crypted 
-•	How does it help you answer your question?
-This will be helpful to answer the main problematic because I need to work with accurate data and in order to verify if I possess the right data, I need to check their integrity.
-● Are there any problems with the data?
-Cyclistic count a total of 600 stations across their location. In the dataset i can see number out of the range of 600 stations which means it needs to be clean in order to work with accurate data.
-Process
 
-● What tools are you choosing and why?
-I am going to use excel, as it is a csv.file the readability of this data will be easier 
-● Have you ensured your data’s integrity?
-I checked header column on excel they were all matching, performed missing entries. The ids clients names have been crypted to ensure the data privacy. A lot of rows are empty which come into conflict to whether or not I will be able to end this project with accurate result.
-•	Has your data been properly formatted?
-Every trip-divvy files has been formatted in cvs files with the function save as in excel 
+# Prepare
 
-● What trends or relationships did you find in the data?
-I discovered from the pivot table of January that the members are more important than the casual riders. Casual riders for this month tend to use  their ride longer than members others key aspect have to be taken into consideration.
--	Jojojoo
--	Oojojk
--	Ijijijiji
--	Ijjijioj
--	Ijijjijj
--	Uhuhu
-How will these insights help answer your business questions?
-This insight help us having a better understanding about our data and our main answer with that we can use our prediction about how members and casual member behave through the use cyclistic product.
-● Calculate the mean of ride_length
-SELECT 
+
+The data is on aws"amazon server" store in a public server [Divvy-tripdata](https://divvy-tripdata.s3.amazonaws.com/index.html)
+
+I downloaded the previous 12 Months data and stored it locally. The data is reliable and original since it comes from the company.It is comprehensive, current, and cited. The data source is the company so everything about the users personal information is hidden or kept private to the company only.
+
+Files names
+202201-divvy-tripdata.csv 202202-divvy-tripdata.csv 202203-divvy-tripdata.csv 202204-divvy-tripdata.csv 202205-divvy-tripdata.csv 202206-divvy-tripdata.csv 202207-divvy-tripdata.csv 202208-divvy-tripdata.csv 202209-divvy-tripdata.csv 202210-divvy-tripdata.csv 202211-divvy-tripdata.csv 202212-divvy-tripdata.csv
+
+The dataset is a .CSV files organized in 13 columns for the different 12 files, each columns contain the same organization. Ride_id, rideable_type, started_at, ended_at, start_station_name, start_station id, end_station_name, end_station_name, end_station_id, start_lat, start_lng,end_lng, member_casual.
+
+# Process
+
+Checked data for any duplicate
+Checked for nulls entry
+
+
 # Analyze
 
 I used Excel to verify data consistency
