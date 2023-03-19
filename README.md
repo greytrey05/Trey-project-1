@@ -68,3 +68,27 @@ How will these insights help answer your business questions?
 This insight help us having a better understanding about our data and our main answer with that we can use our prediction about how members and casual member behave through the use cyclistic product.
 ● Calculate the mean of ride_length
 SELECT 
+# Analyze
+
+
+
+
+# Share
+
+I used Tableau to make the vizualisation check the link below
+
+You can get access to my viz here:[LINK](https://public.tableau.com/app/profile/james.trey/viz/Cyclistic-GoogleAnalyticsProject1/Histoire1)
+
+# ACT
+
+## Conclusion
+
+The data shows that **casual riders** take bike trips from Friday to the end of the weekend as opposed to **member** who takes bike trips more evenly spread throughout the week. Casual riders on average also take twice times longer for a single trip, starting their trips later in the day. Both casuals and members take bike trips primarily during the warmer months with a steep decline. What also have been discovered is that the prefer ride is classic_bike and docked bike for casual member and for member they mostly use classic_bike and electric_bike. 
+With the discovery of they behaviour the marketing team can tailor a new program for casual and member to maximize the profit as Moreno wished it.
+We can conclude that casuals riders on average use the Cyclistic bike services for leisure and not to commute from and to work. At the moment Cyclistic offers a single annual membership which does not benefit casual riders as they take trips on the weekends and during the warmer months.
+
+### Additionnal data I could use to expand my findings?
+
+* I could use the weather data to see if that has an impact for the use of cyclistic product
+* Data for Special event as well in the area where cyclistic operates could be used 
+
