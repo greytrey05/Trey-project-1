@@ -70,14 +70,22 @@ This insight help us having a better understanding about our data and our main a
 SELECT 
 # Analyze
 
+I used Excel to verify data consistency
+Performed calculation of ride length using start_at – ended_at (min, mean and max)
+Mode of the day using (=WEEKDAY) to match the day of the week
+Used Pivot table to quickly calculate and visualize data 
+* Calculate the average ride_length for members and casual riders.  = member_casual; Values = Average of ride_length  
+* Calculate the average ride_length for users by day_of_week.  = day_of_week; = member_casual; Values = Average of ride_length.
+* Calculate the number of rides for users by day_of_week by adding Count of trip_id to Values.
 
-
+Used R to clean data and conduct descriptive analysis.
+[R analysis](https://www.kaggle.com/code/treytrigga/google-capstone-project-1)
 
 # Share
 
 I used Tableau to make the vizualisation check the link below
 
-You can get access to my viz here:[LINK](https://public.tableau.com/app/profile/james.trey/viz/Cyclistic-GoogleAnalyticsProject1/Histoire1)
+You can get access to my viz here:[LINK](https://public.tableau.com/app/profile/james.trey/viz/Cyclistic-GoogleAnalyticsProject1)
 
 # ACT
 
@@ -86,6 +94,14 @@ You can get access to my viz here:[LINK](https://public.tableau.com/app/profile/
 The data shows that **casual riders** take bike trips from Friday to the end of the weekend as opposed to **member** who takes bike trips more evenly spread throughout the week. Casual riders on average also take twice times longer for a single trip, starting their trips later in the day. Both casuals and members take bike trips primarily during the warmer months with a steep decline. What also have been discovered is that the prefer ride is classic_bike and docked bike for casual member and for member they mostly use classic_bike and electric_bike. 
 With the discovery of they behaviour the marketing team can tailor a new program for casual and member to maximize the profit as Moreno wished it.
 We can conclude that casuals riders on average use the Cyclistic bike services for leisure and not to commute from and to work. At the moment Cyclistic offers a single annual membership which does not benefit casual riders as they take trips on the weekends and during the warmer months.
+
+### Top Three recommendation
+
+* Create a seasonal offer for single pass ride and full day pass ride on the beginning of hotter season from April to the end of september ex: 10-15 min free ride during hot season.
+
+* As casual ridders are aware of cyclistic offer the marketing team can propose a week-end offer 
+
+* create a credit membership where they use when needed this could drive profit  Ex: casual riders can opt to add money to their credit membership to buy a day trip.
 
 ### Additionnal data I could use to expand my findings?
 
