@@ -41,8 +41,8 @@ The dataset is a .CSV files organized in 13 columns for the different 12 files, 
 
 # Process
 
-Checked data for any duplicate
-Checked for nulls entry
+* Checked data for any duplicate
+* Checked for nulls entry
 
 
 # Analyze
