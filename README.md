@@ -25,7 +25,7 @@ I will follow the steps of the data analysis process: **ask, prepare, process, a
 2. Consider key stakeholders
 
 * Lily Moreno: The director of marketing
-
+* Cyclistic executive team
 
 # Prepare
 
