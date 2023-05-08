@@ -62,7 +62,7 @@ Used R to clean data and conduct descriptive analysis.
 
 I used Tableau to make the vizualisation check the link below
 
-You can get access to my viz here:[LINK](https://public.tableau.com/app/profile/james.trey/viz/Cyclistic-GoogleAnalyticsProject1)
+You can get access to my viz here:[DATA_Viz](https://public.tableau.com/app/profile/james.trey/viz/divvyCyclistic-GoogledataAnalyticsProject/Tableaudebord1)
 
 # ACT
 
